@@ -6,10 +6,5 @@ The script is writted in Python 3 and uses Selenium package with a PhantomJS dri
 
 - Python 3
 - Selenium
-- PhantomJS
+- Firefox 
 
-This repo contains short scripts for installing them on Ubuntu 15.10. 
-
-1. Python 3 is already installed in standard Ubuntu.
-2. To install Selenium, run `install-pip.sh`, which installs pip3. Then run `install-selenium.sh`, which installs Selenium for python, using pip3.
-3. To install PhantomJS, run `install-phantomjs.sh`
