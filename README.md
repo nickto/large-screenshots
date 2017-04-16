@@ -7,4 +7,4 @@ The script is writted in Python 3 and uses Selenium package with a PhantomJS dri
 - Python 3
 - Selenium
 - Firefox 
-
+- Firefox WebDriver

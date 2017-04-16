@@ -11,7 +11,7 @@ if not os.path.exists(dirName):
 url = "https://kso.etjanster.lantmateriet.se/?e=535815&n=6459250&z=9&profile=default_background_noauth"
 fileName = "out.png"
 
-#browser = webdriver.PhantomJS()
+# browser = webdriver.PhantomJS()
 # PhantomJS does not work with Lantmateriet
 # Therefore, start Firefox headlessly:
 # 1. Install xvfb
@@ -24,6 +24,6 @@ fileName = "out.png"
 browser = webdriver.Firefox()
 browser.set_window_size(2000,2000)
 browser.get(url)
-sleep(10)
+sleep(1)
 browser.save_screenshot(dirName + "/" + fileName)
 browser.quit()
