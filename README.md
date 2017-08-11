@@ -7,4 +7,23 @@ The script is writted in Python 3 and uses Selenium package with a PhantomJS dri
 - Python 3
 - Selenium
 - Firefox 
-- Firefox WebDriver
+- Firefox WebDriver (geckodriver)
+
+## Firefox and Selenium
+```
+apt install python-pip firefox
+pip install selenium
+```
+
+## Firefox WebDriver
+1. Download geckodriver from [here](https://github.com/mozilla/geckodriver/releases)
+2. Add it to PATH (as shown [here](https://askubuntu.com/questions/870530/how-to-install-geckodriver-in-ubuntu))
+
+## Running Firefox headlessly
+Follow suggestions from [here](http://agiletesting.blogspot.se/2016/01/running-selenium-webdriver-tests-using.html):
+1. Install xvfb: `apt install Xvfbq`
+2. Start it at display 10: `Xvfb :10 -ac &`
+3. Set display to 10: `export DISPLAY=:10`
+4. Now run this script from teh same terminal
+
+
