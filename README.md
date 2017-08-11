@@ -24,6 +24,6 @@ Follow suggestions from [here](http://agiletesting.blogspot.se/2016/01/running-s
 1. Install xvfb: `apt install Xvfbq`
 2. Start it at display 10: `Xvfb :10 -ac &`
 3. Set display to 10: `export DISPLAY=:10`
-4. Now run this script from teh same terminal
+4. Now run this script from the same terminal
 
 
