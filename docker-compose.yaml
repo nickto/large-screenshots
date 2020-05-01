@@ -1,0 +1,19 @@
+version: "3"
+services:
+  firefox:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /home/seluser/map-extractor
+    volumes:
+      - .:/home/seluser/map-extractor
+      - /dev/shm:/dev/shm
+    environment: 
+      - START_XVFB=false
+    entrypoint: 
+      - python3
+    # # For interactive container debugging:
+    # entrypoint: 
+    #   - /bin/bash
+    # tty: true
+    # stdin_open: true

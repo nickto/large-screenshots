@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import os
-from time import sleep
+import time
 from selenium import webdriver
 
 # Create output folder if does not exist
@@ -11,9 +11,11 @@ if not os.path.exists(dirName):
 url = "https://kso.etjanster.lantmateriet.se/?e=535815&n=6459250&z=9&profile=default_background_noauth"
 fileName = "out.png"
 
-browser = webdriver.Firefox()
-browser.set_window_size(2000,2000)
-browser.get(url)
-sleep(1)
-browser.save_screenshot(dirName + "/" + fileName)
-browser.quit()
+options = webdriver.FirefoxOptions()
+options.headless = True
+driver = webdriver.Firefox(options=options)
+driver.set_window_size(2000,2000)
+driver.get(url)
+time.sleep(1)
+driver.save_screenshot(dirName + "/" + fileName)
+driver.quit()
