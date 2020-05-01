@@ -1,9 +1,10 @@
-version: "3"
+version: "3.4"
 services:
   firefox:
     build: 
       context: .
       dockerfile: Dockerfile
+      target: deployment
     working_dir: /home/seluser/map-extractor
     volumes:
       - .:/home/seluser/map-extractor
@@ -17,3 +18,21 @@ services:
     #   - /bin/bash
     # tty: true
     # stdin_open: true
+
+  development:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    working_dir: /home/seluser/map-extractor
+    volumes:
+      - .:/home/seluser/map-extractor
+      - /dev/shm:/dev/shm
+    environment:
+      - VISUAL=vim
+      - EDITOR=vim
+    # For interactive container debugging:
+    entrypoint: 
+      - /bin/bash
+    tty: true
+    stdin_open: true    
