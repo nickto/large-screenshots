@@ -1,6 +1,6 @@
 version: "3.4"
 services:
-  firefox:
+  screenshot:
     build: 
       context: .
       dockerfile: Dockerfile
@@ -12,7 +12,8 @@ services:
     environment: 
       - START_XVFB=false
     entrypoint: 
-      - python3
+      - python3 
+      - screenshot.py
     # # For interactive container debugging:
     # entrypoint: 
     #   - /bin/bash
@@ -31,7 +32,6 @@ services:
     environment:
       - VISUAL=vim
       - EDITOR=vim
-    # For interactive container debugging:
     entrypoint: 
       - /bin/bash
     tty: true
