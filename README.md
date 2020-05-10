@@ -1,4 +1,4 @@
-# Map extractor
+# Large screenshots 
 
 A script to take screenshots of web sites in larger dimensions than your
 physical screen.
