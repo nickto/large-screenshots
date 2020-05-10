@@ -1,29 +1,39 @@
 # Map extractor
-This is a small python script to make screenshots of web-sites. It is called Map extractor, because there are some maps providers that make their maps available in web-based verions only, this allows to make screenshots of larger areas than fit onto a screen for more convenient use. Note that in some cases this might be illegal.
 
-# Requirements
-The script is writted in Python 3 and uses Selenium package with a PhantomJS driver. Therefore, the requirements are:
+A script to take screenshots of web sites in larger dimensions than your
+physical screen.
 
-- Python 3
-- Selenium
-- Firefox 
-- Firefox WebDriver (geckodriver)
+## Example usage
 
-## Firefox and Selenium
-```
-apt install python-pip firefox
-pip install selenium
+Using `docker-compose`:
+
+```bash
+docker-compose run screenshot --output=google.png "https://google.com"
 ```
 
-## Firefox WebDriver
-1. Download geckodriver from [here](https://github.com/mozilla/geckodriver/releases)
-2. Add it to PATH (as shown [here](https://askubuntu.com/questions/870530/how-to-install-geckodriver-in-ubuntu))
+For more options run
 
-## Running Firefox headlessly
-Follow suggestions from [here](http://agiletesting.blogspot.se/2016/01/running-selenium-webdriver-tests-using.html):
-1. Install xvfb: `apt install Xvfbq`
-2. Start it at display 10: `Xvfb :10 -ac &`
-3. Set display to 10: `export DISPLAY=:10`
-4. Now run this script from the same terminal
+```bash
+docker-compose run screenshot --help
+```
+
+A full working example with a web-site with a pop-up:
+
+```bash
+docker-compose run screenshot \
+  --output=example.png \
+  --log=debug \
+  --pop-up="/html/body/tommi-topper/tt-tmv/div[4]/div[1]/button[2]" \
+  "https://topomapviewer.ngi.be/?l=en&x=673574.21&y=674008.07&zoom=8&baseLayer=ngi.cartoweb.topo.be"
+```
+
+## Useful websites
+
+- [https://kso.etjanster.lantmateriet.se/](Lantemätariet) for Sweden.
+- [https://topomapviewer.ngi.be/](Het Nationaal Geografisch Instituut) for
+  Belgium.
+
+
+
 
 
