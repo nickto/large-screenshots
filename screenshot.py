@@ -32,13 +32,18 @@ from selenium import webdriver
               required=False,
               default=5,
               help="Seconds to wait until the page is assumed to be loaded.")
+@click.option("--pop-up",
+              type=click.STRING,
+              required=False,
+              default=None,
+              help="XPath of a button to close a popup.")              
 @click.option("--log",
               type=click.Choice(["error", "warning", "info", "debug"],
                                 case_sensitive=False),
               required=False,
               default="info",
               help="Seconds to wait until the page is assumed to be loaded.")
-def screenshot(url, output, width, height, sleep, log):
+def screenshot(url, output, width, height, sleep, pop_up, log):
     """This script takes a screenshot of a page at URL.
     
     Example usage:
@@ -71,8 +76,20 @@ def screenshot(url, output, width, height, sleep, log):
     # Load URL
     logger.debug(f"Loading {url:s}")
     driver.get(url)
+
     logger.info(f"Waiting {sleep:d} seconds for page to be assumed loaded.")
     time.sleep(sleep)
+
+    # Click pop up if needed
+    if pop_up:
+        driver.save_screenshot("debug.png")
+        logger.info(f"Pop-up provider, clicking XPath {pop_up:s}.")
+        driver.find_element_by_xpath(pop_up).click()
+        logger.info(f"Waiting {sleep:d} seconds for page to be assumed loaded.")
+        time.sleep(sleep)
+    else:
+        logger.debug("No pop up to close specified.")
+
 
     # Take and save screenshot
     logger.info(f"Saving screenshot to {output:s}.")
