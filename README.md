@@ -42,7 +42,7 @@ docker-compose run screenshot \
   "https://www.google.com/"
 ```
 
-## Useful websites
+## Potentially useful websites
 
 - [Lantemätariet](https://kso.etjanster.lantmateriet.se/) for maps of Sweden.
 - [Het Nationaal Geografisch Instituut](https://topomapviewer.ngi.be/) for maps
