@@ -32,3 +32,6 @@ docker-compose run screenshot \
 - [Lantemätariet](https://kso.etjanster.lantmateriet.se/) for Sweden.
 - [Het Nationaal Geografisch Instituut](https://topomapviewer.ngi.be/) for
   Belgium.
+- [Jāņa sēta](https://my.balticmaps.eu/) for Latvia.
+- [Latvijas Ģeotelpiskās informācijas aģentūra](https://kartes.lgia.gov.lv/) for
+  Latvia.
