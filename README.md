@@ -29,11 +29,6 @@ docker-compose run screenshot \
 
 ## Useful websites
 
-- [https://kso.etjanster.lantmateriet.se/](Lantemätariet) for Sweden.
-- [https://topomapviewer.ngi.be/](Het Nationaal Geografisch Instituut) for
+- [Lantemätariet](https://kso.etjanster.lantmateriet.se/) for Sweden.
+- [Het Nationaal Geografisch Instituut](https://topomapviewer.ngi.be/) for
   Belgium.
-
-
-
-
-
