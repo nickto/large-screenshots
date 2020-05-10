@@ -82,7 +82,6 @@ def screenshot(url, output, width, height, sleep, pop_up, log):
 
     # Click pop up if needed
     if pop_up:
-        driver.save_screenshot("debug.png")
         logger.info(f"Pop-up provider, clicking XPath {pop_up:s}.")
         driver.find_element_by_xpath(pop_up).click()
         logger.info(f"Waiting {sleep:d} seconds for page to be assumed loaded.")
