@@ -17,21 +17,37 @@ For more options run
 docker-compose run screenshot --help
 ```
 
-A full working example with a web-site with a pop-up:
+### Pop ups
+
+Some web sites do not allow accessing their contents without closing a pop-up or
+a pop-up might cover part of the screen. This can be solved by providing XPath
+of a button that closes such a pop-up to the `--pop-up` argument.
+
+Example without closing a pop-up:
 
 ```bash
 docker-compose run screenshot \
-  --output=example.png \
+  --output=example_without_closing_popup.png \
   --log=debug \
-  --pop-up="/html/body/tommi-topper/tt-tmv/div[4]/div[1]/button[2]" \
-  "https://topomapviewer.ngi.be/?l=en&x=673574.21&y=674008.07&zoom=8&baseLayer=ngi.cartoweb.topo.be"
+  "https://www.google.com/"
+```
+
+Example with closing a pop-up first:
+
+```bash
+docker-compose run screenshot \
+  --output=example_with_closed_popup.png \
+  --log=debug \
+  --pop-up="//*[@id='cnsd']" \
+  "https://www.google.com/"
 ```
 
 ## Useful websites
 
-- [Lantemätariet](https://kso.etjanster.lantmateriet.se/) for Sweden.
-- [Het Nationaal Geografisch Instituut](https://topomapviewer.ngi.be/) for
-  Belgium.
-- [Jāņa sēta](https://my.balticmaps.eu/) for Latvia.
+- [Lantemätariet](https://kso.etjanster.lantmateriet.se/) for maps of Sweden.
+- [Het Nationaal Geografisch Instituut](https://topomapviewer.ngi.be/) for maps
+  of Belgium.
+- [Jāņa sēta](https://my.balticmaps.eu/) for maps of Latvia.
 - [Latvijas Ģeotelpiskās informācijas aģentūra](https://kartes.lgia.gov.lv/) for
-  Latvia.
+  maps of Latvia.
+- [Norge.no](https://www.norgeskart.no/) for maps of Norway.
